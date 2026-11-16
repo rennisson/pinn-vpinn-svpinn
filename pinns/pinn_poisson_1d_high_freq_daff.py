@@ -20,7 +20,7 @@ os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
 activation_function = jax.nn.tanh
 
 # Parâmetro de frequência da EDP (Eq. 6.3)
-a = 1
+a = 300
 
 
 def u(x, a=a):
@@ -72,7 +72,7 @@ print(f"Ground truth '{gt_path}' carregado (a = {a}) com {X_test.shape[0]} ponto
 # ==========================================
 # 2. DADOS E CONFIGURAÇÕES DE TREINO
 # ==========================================
-n = 256
+n = 5000
 key_x = jax.random.PRNGKey(136)
 
 # Gera amostras usando Latin Hypercube Sampling no intervalo [0, 1)
@@ -98,7 +98,7 @@ optimizer = optax.adam(learning_rate, b1, b2, eps, eps_root)
 #    Codificação DAFF (Sec. 4.1.1, Eq. 4.2, d=1):
 #        phi_k(x) = sqrt(2) * sin(k * pi * x),  k = 1, ..., n_daff
 # ==========================================
-n_daff = 64  # número de funções de base DAFF (Table A.8, caso 1D)
+n_daff = 128  # número de funções de base DAFF (Table A.8, caso 1D)
 
 
 def daff_encoding(x, n_daff=n_daff):
