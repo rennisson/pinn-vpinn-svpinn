@@ -60,8 +60,8 @@ activation_function = jax.nn.tanh
 # Parâmetro de frequência da EDP (Eq. 6.4): a in {1, 10, 25, 50, 75}
 a = 75
 
-K_TEST_FUNCTIONS = 12
-Q_QUADRATURE = 60
+K_TEST_FUNCTIONS = 64
+Q_QUADRATURE = 128
 N_G_BOUNDARY = 250  # pontos de colocacao por aresta (mesmo N_g de pinn_poisson_2d.py)
 NUM_STEPS = 5000
 EVAL_FREQ = 20
