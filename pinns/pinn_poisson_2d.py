@@ -48,8 +48,8 @@ activation_function = jax.nn.tanh
 lr = 1e-3
 epochs_adam = 5000
 lbfgs_maxiter = 15000
-eval_freq = 100
-num_runs = 10
+eval_freq = 30
+num_runs = 5
 main_key = jax.random.PRNGKey(42)
 
 N_f = 2000
