@@ -35,7 +35,7 @@ eval_freq = 20
 num_runs = 3
 main_key = jax.random.PRNGKey(42)
 
-N_f = 2000
+N_f = 16000
 N_g = 250
 
 def u(x, y, a=a):
