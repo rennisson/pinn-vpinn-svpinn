@@ -54,13 +54,13 @@ os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
 activation_function = jax.nn.tanh
 
 # Parâmetro de frequência da EDP (Eq. 6.3)
-a = 1
+a = 300
 
-K_TEST_FUNCTIONS = 60
-Q_QUADRATURE = 100
+K_TEST_FUNCTIONS = 512
+Q_QUADRATURE = 2048
 NUM_STEPS = 5000
 EVAL_FREQ = 20
-NUM_RUNS = 5
+NUM_RUNS = 3
 HIDDEN_LAYER_CONFIGS = [2, 3]
 
 NEURONS_PER_LAYER = [264, 512]
@@ -381,7 +381,7 @@ for L in HIDDEN_LAYER_CONFIGS:
 
         methods = {
             "R1": lambda p: vpinn_loss_R1(p, x_q, w_q_phys, V, F, TAU_VPINN, g, h),
-            "R2": lambda p: vpinn_loss_R2(p, x_q, w_q_phys, Vx_phys, F, TAU_VPINN, g, h),
+            # "R2": lambda p: vpinn_loss_R2(p, x_q, w_q_phys, Vx_phys, F, TAU_VPINN, g, h),
         }
 
         for method_tag, loss_builder in methods.items():
