@@ -75,8 +75,8 @@ K_TEST_FUNCTIONS = 12
 Q_QUADRATURE = 60
 N_G_BOUNDARY = 250  # pontos de colocacao por aresta (mesmo N_g de pinn_poisson_2d.py)
 NUM_STEPS = 20000
-EVAL_FREQ = 100
-NUM_RUNS = 10
+EVAL_FREQ = 30
+NUM_RUNS = 5
 HIDDEN_LAYER_CONFIGS = [2,3,4,5]
 
 NEURONS_PER_LAYER = [20,60]
